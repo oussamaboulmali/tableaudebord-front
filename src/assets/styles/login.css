@@ -1,0 +1,808 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+      135deg,
+      rgba(15, 23, 42, 0.95) 0%,
+      rgba(30, 41, 59, 0.9) 50%,
+      rgba(51, 65, 85, 0.85) 100%
+    ),
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(100, 116, 139, 0.3) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(71, 85, 105, 0.3) 0%,
+      transparent 50%
+    );
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Grille subtile en arrière-plan */
+.login-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+      rgba(148, 163, 184, 0.03) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: 0;
+}
+
+#container {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.1),
+    0 20px 60px -15px rgba(0, 0, 0, 0.4), 0 0 100px rgba(100, 116, 139, 0.1);
+  padding: 3rem;
+  width: 30%;
+  min-width: 450px !important;
+  margin: 2rem;
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  height: 550px;
+  min-height: fit-content;
+}
+
+/* Effet de lumière subtil au survol */
+#container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(148, 163, 184, 0.5),
+    transparent
+  );
+}
+
+#aps-logo-container {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+#aps-logo {
+  max-height: 150px;
+  max-width: 350px;
+  width: auto;
+  height: auto;
+  filter: drop-shadow(0 4px 12px rgba(51, 65, 85, 0.85));
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+#aps-logo:hover {
+  transform: scale(1.05) translateY(-2px);
+}
+#login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.login-page .MuiTextField-root {
+  margin-bottom: 1rem !important;
+}
+
+.login-page .MuiOutlinedInput-root {
+  border-radius: 12px !important;
+  background-color: #f8fafc !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.login-page .MuiOutlinedInput-root:hover {
+  background-color: #f1f5f9 !important;
+  box-shadow: 0 0 0 4px rgba(100, 116, 139, 0.06) !important;
+}
+
+.login-page .MuiOutlinedInput-root.Mui-focused {
+  background-color: #ffffff !important;
+  box-shadow: 0 0 0 4px rgba(51, 65, 85, 0.08) !important;
+}
+
+.login-page .MuiOutlinedInput-notchedOutline {
+  border-color: rgba(203, 213, 225, 0.8) !important;
+  border-width: 1.5px !important;
+}
+
+.login-page .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: rgba(100, 116, 139, 0.5) !important;
+}
+
+.login-page
+  .MuiOutlinedInput-root.Mui-focused
+  .MuiOutlinedInput-notchedOutline {
+  border-color: #475569 !important;
+  border-width: 2px !important;
+}
+
+/* Styles pour les labels */
+.login-page .MuiInputLabel-root {
+  color: rgba(71, 85, 105, 0.9) !important;
+  font-weight: 500 !important;
+}
+
+.MuiInputLabel-root.Mui-focused {
+  color: #1e293b !important;
+  font-weight: 600 !important;
+}
+
+/* Styles pour les icônes */
+.login-page .MuiInputAdornment-root svg {
+  color: rgba(100, 116, 139, 0.7) !important;
+  transition: color 0.3s ease !important;
+}
+
+.login-page .MuiOutlinedInput-root.Mui-focused .MuiInputAdornment-root svg {
+  color: #475569 !important;
+}
+
+/* Styles pour le bouton principal */
+#submit-button {
+  background: linear-gradient(
+    135deg,
+    #1e293b 0%,
+    #334155 50%,
+    #475569 100%
+  ) !important;
+  border-radius: 12px !important;
+  padding: 14px 28px !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  text-transform: none !important;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.3),
+    0 0 0 1px rgba(148, 163, 184, 0.1) inset !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  margin-top: 10px !important;
+  position: relative;
+  overflow: hidden;
+}
+
+#submit-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+#submit-button:hover::before {
+  left: 100%;
+}
+
+#submit-button:hover {
+  background: linear-gradient(
+    135deg,
+    #0f172a 0%,
+    #1e293b 50%,
+    #334155 100%
+  ) !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.4),
+    0 0 0 1px rgba(148, 163, 184, 0.2) inset !important;
+  transform: translateY(-2px) !important;
+}
+
+#submit-button:active {
+  transform: translateY(0px) !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.3),
+    0 0 0 1px rgba(148, 163, 184, 0.1) inset !important;
+}
+
+/* Styles pour les messages d'erreur */
+.login-error {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.login-error p {
+  color: #dc2626;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: rgba(254, 226, 226, 0.9);
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(248, 113, 113, 0.4);
+  margin: 0;
+}
+
+/* Styles pour le loader */
+.MuiCircularProgress-root {
+  color: #334155 !important;
+}
+
+/* Styles pour la section OTP */
+#otp-label {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: linear-gradient(
+    135deg,
+    rgba(241, 245, 249, 0.8) 0%,
+    rgba(226, 232, 240, 0.6) 100%
+  );
+  border-radius: 12px;
+  border: 1px solid rgba(203, 213, 225, 0.6);
+}
+
+/* Styles pour les champs OTP */
+.MuiOtpInput-TextField {
+  margin: 0 0.25rem !important;
+}
+
+.MuiOtpInput-TextField .MuiOutlinedInput-root {
+  border-radius: 10px !important;
+  background-color: #f8fafc !important;
+  font-size: 1.2rem !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+  border: 2px solid rgba(203, 213, 225, 0.6) !important;
+}
+
+.MuiOtpInput-TextField .MuiOutlinedInput-input {
+  text-align: center !important;
+  font-weight: 600 !important;
+  color: #1e293b !important;
+}
+
+/* Animation pour le container */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+#container {
+  animation: slideIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .login-page {
+    padding: 1rem;
+  }
+
+  #container {
+    padding: 2rem;
+    margin: 1rem;
+    min-width: 320px !important;
+  }
+
+  #aps-logo {
+    max-height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  #container {
+    padding: 1.5rem;
+    border-radius: 20px;
+    min-width: 250px;
+  }
+
+  .MuiTextField-root {
+    margin-bottom: 0.75rem !important;
+  }
+
+  #submit-button {
+    padding: 12px 24px !important;
+  }
+}
+
+/* Éléments décoratifs flottants */
+.background-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.floating-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(148, 163, 184, 0.15) 0%,
+    rgba(100, 116, 139, 0.08) 50%,
+    transparent 100%
+  );
+  backdrop-filter: blur(2px);
+  animation: floatAnimation 20s ease-in-out infinite;
+}
+
+.shape-1 {
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  width: 200px;
+  height: 200px;
+  top: 60%;
+  right: 15%;
+  animation-delay: 7s;
+}
+
+.shape-3 {
+  width: 150px;
+  height: 150px;
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 14s;
+}
+
+@keyframes floatAnimation {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translate(50px, -50px) rotate(90deg) scale(1.1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(100px, -30px) rotate(180deg) scale(0.9);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translate(50px, 30px) rotate(270deg) scale(1.05);
+    opacity: 0.45;
+  }
+}
+
+/* Sous-titre du logo */
+.logo-subtitle {
+  color: rgba(51, 65, 85, 0.8);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-top: 0.75rem;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* Styles supplémentaires pour les dialogues de confirmation */
+#submit-button .MuiDialog-paper {
+  border-radius: 16px !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35) !important;
+}
+
+#submit-button .MuiDialogTitle-root {
+  color: #1e293b !important;
+  font-weight: 600 !important;
+}
+
+#submit-button .MuiButton-containedPrimary {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%) !important;
+  border-radius: 8px !important;
+  text-transform: none !important;
+  font-weight: 500 !important;
+}
+
+/* Animation d'entrée pour les formulaires */
+.fade-in {
+  animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.resned-otp-message {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.resned-otp-message p {
+  color: #059669;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background: linear-gradient(
+    135deg,
+    rgba(16, 185, 129, 0.12) 0%,
+    rgba(34, 197, 94, 0.12) 100%
+  );
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  margin: 0;
+  animation: slideInSuccess 0.5s ease-out;
+}
+
+/* Styles simples pour le timer OTP */
+.timer-container {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(248, 250, 252, 0.9);
+  border-radius: 12px;
+  border: 1px solid rgba(203, 213, 225, 0.5);
+}
+
+/* Styles pour l'affichage du temps */
+.timer-display {
+  margin: 0.75rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #334155;
+  font-family: "Courier New", monospace;
+}
+
+#constum-time {
+  display: inline-block;
+  min-width: 2rem;
+  padding: 0.25rem 0.5rem;
+  background: rgba(51, 65, 85, 0.08);
+  border-radius: 6px;
+  border: 1px solid rgba(203, 213, 225, 0.5);
+  margin: 0 0.1rem;
+}
+
+/* Styles pour la section de renvoi */
+#resend-otp {
+  margin: 1rem 0;
+}
+
+#resend-otp p:first-child {
+  color: rgba(51, 65, 85, 0.8);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+/* Styles pour le bouton de renvoi - ACTIVÉ */
+#resend-text {
+  color: #1e293b;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  display: inline-block;
+  margin: 0;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+}
+
+#resend-text:hover {
+  text-decoration: none;
+  background: rgba(226, 232, 240, 0.5);
+  color: #0f172a;
+}
+
+/* Styles pour le bouton de renvoi - DÉSACTIVÉ */
+#resend-text-disbled {
+  color: #94a3b8;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: not-allowed;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  display: inline-block;
+  margin: 0;
+  opacity: 0.6;
+}
+
+/* Styles pour les messages de succès */
+.resned-otp-message {
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+.resned-otp-message p {
+  color: #059669;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: rgba(16, 185, 129, 0.1);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  margin: 0;
+}
+
+/* === Structure globale === */
+.login-container {
+  display: grid;
+  grid-template-columns: 65% 35%;
+  min-height: 100vh;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+}
+
+/* === Partie gauche === */
+.login-left {
+  position: relative;
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%) brightness(1);
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .login-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 4rem;
+    color: #fff;
+  }
+}
+
+.login-left-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(17, 24, 39, 0.9),
+    rgba(31, 41, 55, 0.8),
+    transparent
+  );
+}
+
+.login-left-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.login-left-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.left-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.login-left-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 20px 0;
+}
+
+.login-left-content p {
+  font-size: 1.1rem;
+  color: #d1d5db;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.left-stats {
+  display: flex;
+  gap: 3rem;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+/* === Forme flottantes === */
+.floating-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.3;
+  animation: pulse 6s ease-in-out infinite alternate;
+}
+
+.shape-1 {
+  top: 100px;
+  right: 100px;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(107, 114, 128, 0.3), transparent);
+}
+
+.shape-2 {
+  bottom: 100px;
+  left: 100px;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(75, 85, 99, 0.3), transparent);
+  animation-delay: 2s;
+}
+
+.shape-3 {
+  bottom: 50px;
+  left: 50px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(200, 200, 200, 0.4), transparent);
+}
+
+/* === Partie droite === */
+.login-right {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+
+.login-right-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.3;
+
+  background-size: 40px 40px;
+}
+
+/* === Formulaire === */
+.login-form-container {
+  position: relative;
+  z-index: 1;
+  max-width: 500px;
+  width: 100%;
+  background: none;
+
+  padding: 3rem 2rem;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-logo {
+  height: 60px;
+  margin-bottom: 1rem;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.login-logo:hover {
+  transform: scale(1.05);
+}
+
+.login-header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.login-header p {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.login-form-box {
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  padding: 2rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+.login-form-box:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* === Footer === */
+.login-footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.login-footer a {
+  color: #111827;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+}
+
+/* === Responsive === */
+@media (max-width: 1024px) {
+  .login-left {
+    display: none;
+  }
+
+  .login-right {
+    flex: 1;
+  }
+
+  .login-form-container {
+    max-width: 90%;
+    padding: 2rem 1.5rem;
+  }
+}

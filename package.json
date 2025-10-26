@@ -1,0 +1,53 @@
+{
+  "name": "back-office",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --config vite.config.js",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@ckeditor/ckeditor5-react": "^11.0.0",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mdi/js": "^7.4.47",
+    "@mdi/react": "^1.6.1",
+    "@mui/material": "^5.15.7",
+    "@mui/x-date-pickers": "^5.0.20",
+    "axios": "^1.6.7",
+    "ckeditor5": "^46.1.0",
+    "dayjs": "^1.11.10",
+    "dompurify": "^3.1.5",
+    "fflate": "^0.8.2",
+    "html-react-parser": "^5.1.16",
+    "loglevel": "^1.9.1",
+    "loglevel-plugin-remote": "^0.6.8",
+    "mui-one-time-password-input": "^2.0.1",
+    "path-browserify": "^1.0.1",
+    "react": "^18.2.0",
+    "react-beautiful-dnd": "^13.1.1",
+    "react-contenteditable": "^3.3.7",
+    "react-copy-to-clipboard": "^5.1.0",
+    "react-data-table-component": "^7.6.2",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-responsive": "^10.0.0",
+    "react-router-dom": "^6.22.0",
+    "react-timer-hook": "^3.0.7",
+    "react-toastify": "^10.0.6",
+    "swiper": "^11.2.5"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "vite": "^7.1.5"
+  }
+}

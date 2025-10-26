@@ -1,0 +1,21 @@
+@media print {
+  body {
+    margin: 0 !important;
+  }
+}
+
+.main-container {
+  font-family: "Lato";
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 400px;
+}
+
+.ck-content {
+  font-family: "Lato";
+  line-height: 1.6;
+  word-break: break-word;
+  height: 440px;
+  overflow: auto;
+}

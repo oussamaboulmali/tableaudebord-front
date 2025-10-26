@@ -1,0 +1,23 @@
+.log_cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+  grid-gap: 20px;
+  justify-content: center;
+}
+
+.log_card_item a {
+  text-decoration: none;
+  color: black;
+  min-width: 200px;
+}
+.log_card_item_content {
+  display: grid;
+  grid-template-columns: auto 80px;
+  align-items: center;
+  height: 100%;
+  cursor: pointer;
+  padding-right: 10px;
+}
+#log-details-container {
+  padding: 15px;
+}

@@ -1,0 +1,14 @@
+.dossier-row1 {
+  width: 96%;
+  display: grid;
+  grid-template-columns: 95% auto;
+  grid-gap: 15px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.selectedRow {
+  background-color: #eee;
+  padding: 8px;
+  border-radius: 10px;
+  margin-left: 5px;
+}

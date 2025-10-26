@@ -1,0 +1,22 @@
+.fieldset {
+  width: 100%;
+  margin: 20px auto;
+  border-radius: 8px;
+  border: 2px solid var(--secondary-dark);
+  background-color: var(--secondary-main);
+  padding: 10px;
+}
+.fieldset .legend {
+  /* background-color: var(--secondary-dark);*/
+  border-radius: 5px;
+  padding: 0px 5px 5px 5px;
+  color: black;
+  font-size: 15px;
+  font-weight: bold;
+}
+.fieldset .row-1 {
+  display: grid;
+  grid-template-columns: 80% auto;
+  align-items: center;
+  grid-gap: 8px;
+}

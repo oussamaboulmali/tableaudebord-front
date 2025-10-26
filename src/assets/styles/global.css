@@ -1,0 +1,170 @@
+:root {
+  --primary-light: linear-gradient(135deg, #eff6ff 0%, #f5f6fa 100%);
+  --primary-main: #1e40af;
+  --primary-dark: #1b3e5e;
+  --transparent: transparent;
+  --secondary-light: #ccc;
+  --secondary-main: #eee;
+  --secondary-dark: #9da4ae;
+  --white: #fff;
+  --error: #e53935;
+}
+
+/*Costum scrollbar*/
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: lightgray;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: lightgray;
+}
+
+body {
+  background: #f7f7f7;
+}
+.home-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+  flex: 1 !important;
+}
+.div-rigth {
+  flex: 1;
+}
+
+.div-rigth.overlay-mode {
+  margin-left: 140px;
+}
+input[type="number"] {
+  mozappearance: none !important;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  display: none;
+}
+
+.content-editable {
+  /* Style par défaut */
+  border: none;
+  padding: 5px;
+  outline: none; /* Pour enlever le contour bleu de focus par défaut */
+  text-align: start;
+  width: 100%;
+  /* Style lors du survol */
+  &:hover {
+    /* background-color: var(--primary-light); */
+    /*border-radius: 5px;
+    border: 1px solid var(--primary-dark);*/
+    color: black;
+    width: fit-content;
+    font-weight: bold;
+    text-align: start;
+    padding: 5px;
+    background-image: url("../images/editer.png");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 16px;
+    padding-right: 28px;
+  }
+
+  /* Style lorsqu'il a le focus */
+  &:focus {
+    /* background-color: var(--primary-light); */
+    border-radius: 5px;
+    border: 1px solid var(--secondary-dark);
+    font-weight: bold;
+    padding: 5px;
+    color: black;
+    width: fit-content;
+    text-align: start;
+    background-image: none;
+    padding-right: 20px;
+  }
+}
+
+.dialogTitle {
+  width: 100%;
+  display: flex;
+  grid-gap: 10px;
+  align-items: center;
+}
+.dialogTitle svg {
+  color: red;
+}
+#formValidate,
+#formValidatee,
+#formValidateform {
+  width: 90%;
+  margin: 20px auto 5px auto;
+  display: grid;
+  grid-gap: 10px;
+}
+#three-grid-icons {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-gap: 10px;
+  margin-right: 25px;
+  align-items: center;
+}
+#four-grid-icons {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-gap: 6px;
+  margin-right: 10px;
+  align-items: center;
+}
+.empty-icon-slot {
+  width: 25px;
+}
+.DialogActions {
+  margin: 0 10px 10px 0;
+}
+.header-close {
+  width: 100%;
+  padding: 15px;
+  background-color: #265396;
+  display: grid;
+  grid-template-columns: auto 30px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 20px;
+}
+.div-add {
+  width: 99%;
+  margin: 0 auto 15px 0;
+  text-align: end;
+}
+.centered-tabs {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #e53935;
+}
+
+.social-embeds figure:not(:has(.twitter-tweet)) {
+  display: grid;
+  justify-content: center;
+}
+.social-embeds .twitter-tweet {
+  margin: 20px auto;
+}
+
+/* Animation au chargement */
+@keyframes pulse-help {
+  0%,
+  100% {
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.7);
+  }
+}
